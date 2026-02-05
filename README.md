@@ -1,4 +1,4 @@
-# multinucleotide_mutations
+# Multinucleotide mutations
 
 Exploring the role of multi-mutation leaps to reach a global peak.
 

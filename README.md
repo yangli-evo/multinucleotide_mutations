@@ -17,8 +17,8 @@ This repo provides simple utilities to generate:
 pip install -e .
 
 ```
+## python
 ```bash
-python
 from mnm_mutations import (
     generate_single_base_mutants,
     generate_adjacent_double_mutants,

@@ -4,13 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mnm-mutations"
-version = "0.1.0"
-description = "Utilities for generating SNM and MNM (double) DNA sequence mutants."
+version = "0.3.0"
+description = "Single-nucleotide and multinucleotide mutations and adaptive walks on fitness landscapes."
 readme = "README.md"
 requires-python = ">=3.9"
 license = {text = "MIT"}
 authors = [{name = "Yang Li", email = "yangli.evo@gmail.com"}]
-dependencies = []
+dependencies = ["numpy>=1.21", "pandas>=1.3"]
+
+[project.optional-dependencies]
+analysis = ["scipy>=1.9", "matplotlib>=3.5", "jupyter"]
+
+[project.scripts]
+mnm-simulate = "mnm_mutations.simulate:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

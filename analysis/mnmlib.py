@@ -1,11 +1,3 @@
-"""
-mnmlib.py -- data-specific helpers for the analyses in this folder.
-
-The generic code (landscapes, mutations, walk rules) is in the package `mnm_mutations`
-(src/mnm_mutations/landscape.py).  This module adds the locations of the landscape and trajectory
-files of the study.  Set the environment variable MNM_DATA to the folder containing the data
-deposited at Zenodo (see data/README.md); results are written to results/ and figures/.
-"""
 import glob
 import os
 import sys
@@ -83,8 +75,6 @@ def traj_path(group, tag, cls, greedy=False):
 
 def load_landscape(group, tag):
     if group == 'TF':
-        # every bound 8-mer was a starting genotype of the SNM walks -> step 0 rows rebuild the landscape;
-        # all four nucleotides are possible at every site (unbound sequences are non-viable)
         t = pd.read_table(traj_path('TF', tag, 'snm'), usecols=['mutant_step', 'seq_info', 'fitness'])
         t = t[t.mutant_step == 0].drop_duplicates('seq_info')
         return Landscape(t.seq_info.values, t.fitness.values, tag, alphabet='ACGT')

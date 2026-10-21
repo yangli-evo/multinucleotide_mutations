@@ -9,13 +9,6 @@ _BASES: Sequence[str] = ("A", "T", "C", "G")
 
 
 def validate_dna_sequence(dna_sequence: str) -> str:
-    """
-    Validate and normalize a DNA sequence.
-
-    Rules:
-    - Must be a non-empty string
-    - Allowed characters: A/T/C/G (case-insensitive)
-    """
     if not isinstance(dna_sequence, str):
         raise TypeError(f"dna_sequence must be a str, got {type(dna_sequence)}")
 
@@ -32,11 +25,6 @@ def validate_dna_sequence(dna_sequence: str) -> str:
 
 
 def generate_single_base_mutants(dna_sequence: str, *, deduplicate: bool = False) -> List[str]:
-    """
-    Generate all single-nucleotide substitution mutants for a DNA sequence.
-
-    For a sequence of length n, returns n * 3 mutants.
-    """
     seq = validate_dna_sequence(dna_sequence)
     mutants: List[str] = []
 
@@ -54,11 +42,6 @@ def generate_single_base_mutants(dna_sequence: str, *, deduplicate: bool = False
 
 
 def generate_adjacent_double_mutants(dna_sequence: str, *, deduplicate: bool = False) -> List[str]:
-    """
-    Generate all adjacent double-substitution mutants (i, i+1).
-
-    For a sequence of length n, returns (n-1) * 3 * 3 mutants.
-    """
     seq = validate_dna_sequence(dna_sequence)
     mutants: List[str] = []
 
@@ -81,11 +64,6 @@ def generate_adjacent_double_mutants(dna_sequence: str, *, deduplicate: bool = F
 
 
 def generate_double_mutants(dna_sequence: str, *, deduplicate: bool = False) -> List[str]:
-    """
-    Generate all (non-adjacent + adjacent) double-substitution mutants across all pairs (i, j), i<j.
-
-    For a sequence of length n, returns C(n,2) * 3 * 3 mutants.
-    """
     seq = validate_dna_sequence(dna_sequence)
     mutants: List[str] = []
     seq_list = list(seq)

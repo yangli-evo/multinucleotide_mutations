@@ -78,9 +78,6 @@ mnm-simulate tf.txt --mnm adj --all-starts --alphabet ACGT -o tf_adj.tsv
 
 Input: a tab-separated table with columns `seq_info` and `fitness`. Output: one row per genotype visited (`mutant_step`, `seq_info`, `fitness`, `start_sequence`). Run `mnm-simulate --help` for all options.
 
-## Reproducing the analyses
-
-The landscapes and simulated trajectories are archived at Zenodo (see [`data/README.md`](data/README.md)). Set `MNM_DATA` to the unpacked archive. The analysis scripts need Python ≥ 3.9 with scipy; the figure scripts need R ≥ 4.3 with ggplot2, ggpubr, dplyr, tidyr and patchwork.
 
 
 ```bash
@@ -100,11 +97,8 @@ The tables plotted in Figs. S19 and S20 are included in [`results/`](results/), 
 src/mnm_mutations/   mutants.py (mutant generation), landscape.py (landscapes, adaptive walks), simulate.py (CLI)
 tests/               pytest suite
 examples/            a small House-of-Cards landscape (L = 5) for testing
-notebooks/           Fig1_HoC.ipynb (Fig. 1 and fitness-distribution dependence of the HoC results)
+notebooks/           HoC.ipynb (fitness-distribution dependence of the HoC results)
 original_pipeline/   scripts that simulated the adaptive walks and produced Figs. 1-4, S1-S18, S21-S25
-analysis/            scripts for Figs. S19 and S20 (Python) and their figures (analysis/R)
-results/             tables produced by the analysis scripts
-data/                placeholder for the Zenodo data (see data/README.md)
 ```
 
 ## Tests

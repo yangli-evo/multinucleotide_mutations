@@ -95,7 +95,6 @@ src/mnm_mutations/   mutants.py (mutant generation), landscape.py (landscapes, a
 tests/               pytest suite
 examples/            a small House-of-Cards landscape (L = 5) for testing
 notebooks/           HoC.ipynb (fitness-distribution dependence of the HoC results)
-original_pipeline/   scripts that simulated the adaptive walks and produced Figs. 1-4, S1-S18, S21-S25
 ```
 
 ## Tests

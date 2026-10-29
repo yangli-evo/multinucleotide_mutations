@@ -85,11 +85,8 @@ cd analysis
 python 01_mnm_proportion_walks.py      # walks with 3%, 9% and 27% MNMs on all landscapes (~15 min on 14 cores)
 python 02_escape_vs_exploration.py     # exploration (y - x) and escape (z) per landscape and landscape class
 python 03_peak_cv.py                   # CV of peak height and peak probabilities of the TF-binding landscapes
-Rscript R/fig_S19_peak_cv.R
-Rscript R/fig_S20_escape_exploration.R
 ```
 
-The tables plotted in Figs. S19 and S20 are included in [`results/`](results/), so the two R scripts run without the Zenodo data. Figures are written to `figures/`.
 
 ## Repository layout
 
